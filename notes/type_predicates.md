@@ -32,7 +32,7 @@ const planet = getPlanet();
 const humans = getHumans(planet); // ⚠️ Argument of type 'Planet | Earth' is not assignable to parameter of type 'Earth'.
 ```
 
-Problem here is using returned value of `getPlanet` function as an argument for `getHumans` function. Event if we're sure that `getPlanet` will return `Earth` typed object, TypeScript's not aware of it. How to handle it? Instead of type casting, we can create a simple type guard:
+Problem here is using returned value of `getPlanet` function as an argument for `getHumans` function. Event if we're sure that `getPlanet` will return `Earth` typed object TypeScript's not aware of it. How to handle it? Instead of type casting we can create a simple type guard:
 
 ```TypeScript
 function isEarth(planet: Planet | Earth): planet is Earth {
